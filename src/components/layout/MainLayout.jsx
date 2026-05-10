@@ -2,6 +2,7 @@ import Navbar from './Navbar';
 import Sidebar from './Sidebar';
 import ApplicationTable from '../dashboard/ApplicationTable';
 import StatsCard from '../dashboard/StatsCard';
+import StatusChart from '../dashboard/StatusChart'; 
 import { applications } from '../../data/mockdata';
 
 function MainLayout() {
@@ -48,7 +49,16 @@ function MainLayout() {
             />
           </div>
 
-          <ApplicationTable />
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+  <div className="lg:col-span-2">
+    <ApplicationTable />
+  </div>
+  <div>
+    <StatusChart applications={applications} />
+  </div>
+</div>
+
+          
         </main>
       </div>
     </div>
